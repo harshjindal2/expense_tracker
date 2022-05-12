@@ -1,0 +1,290 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /*
+ *= require font-awesome
+ */
+
+ @import 'main';
+
+ .g-bg {
+    background-color: #f1f3f2;
+    height: 500px;
+    overflow-y: auto; 
+  }
+  
+  .g-bg-e {
+    background-color: #f1f3f2;
+    height: 85%;
+    overflow-y: auto; 
+  }
+
+
+  
+  a {
+    text-decoration: none;
+  }
+
+a:hover {
+    text-decoration: none;
+  }
+
+
+  html, body {
+    
+  }
+  
+  body {
+    display: grid;
+    font-family: Avenir, sans-serif;
+    color: #111;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .cta {
+    position: relative;
+    margin-top: 0%;
+    margin: 4%;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+  }
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: -12%;
+    left: 0;
+    display: block;
+    border-radius: 43px;
+    background: rgba(255, 171, 157, 0.5);
+    width: 86px;
+    height: 86px;
+    transition: all 0.3s ease;
+  }
+  .cta span {
+    position: relative;
+  
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+  .cta:hover:before {
+    width: 100%;
+    background: #ffab9d;
+  }
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+  .cta:active {
+    transform: scale(0.96);
+  }
+
+
+
+  @-webkit-keyframes mask-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(129px);
+    }
+  }
+  @keyframes mask-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(129px);
+    }
+  }
+  @-webkit-keyframes mask-inner-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-129px);
+    }
+  }
+  @keyframes mask-inner-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-129px);
+    }
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  
+  .focus {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 0.2rem;
+    
+    margin-left: 26%;
+    line-height: 2;
+    position: relative;
+    width: 579px;
+  }
+  .focus:before {
+    content: "Track Your Expense";
+    filter: blur(3px);
+  }
+  .focus:after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: calc(100% + 8px);
+    top: -4px;
+    left: 0;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    -webkit-animation: mask-move 2s linear infinite alternate;
+            animation: mask-move 2s linear infinite alternate;
+  }
+  .focus--mask {
+    overflow: hidden;
+    position: absolute;
+    width: 450px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: mask-move 2s linear infinite alternate;
+            animation: mask-move 2s linear infinite alternate;
+  }
+  .focus--mask-inner {
+    
+    -webkit-animation: mask-inner-move 2s linear infinite alternate;
+            animation: mask-inner-move 2s linear infinite alternate;
+  }
+  
+  .credits {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+    font-style: italic;
+    text-align: center;
+  }
+  .credits a {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  .credits a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  
+  small {
+    background: linear-gradient(335deg, #fc00ff, #00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+   
+    margin: 1em 0em 0 1em;
+    font-family: Roboto;
+  }
+  
+  p {
+    font-weight: 300;
+    font-family: Roboto;
+    color: #d7d3d3;
+    margin-left: 2.17em;
+    max-width: 400px;
+    background: linear-gradient(335deg, #E0EAFC, #CFDEF3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #ab {
+    background-color: #111;
+     display: float;
+    justify-content: center;
+
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 5%;
+  }
+  
+  .col:nth-child(2) small {
+    background: linear-gradient(335deg, #E55D87, #5FC3E4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .col:nth-child(3) small {
+    background: linear-gradient(335deg, #003973, #E5E5BE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .col:nth-child(4) small {
+    background: linear-gradient(335deg, #4CA1AF, #C4E0E5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  footer span {
+    margin-top: 290px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: 300;
+    background: linear-gradient(335deg, #16BFFD, #CB3066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
+  a:hover {
+    /* color: white; */
+    /* background: inherit;
+    border-bottom: 1px solid #999; */
+  }

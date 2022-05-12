@@ -1,0 +1,83 @@
+
+
+<div class="focus d-flex justify-content-center mt-5"> 
+  <div class="focus--mask">
+    <div class="focus--mask-inner">Track Your Expense</div>
+  </div>
+</div>
+
+<%
+=begin%>
+ <div class="container mt-5 text-center">
+ 
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-hand-holding-usd fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">
+           
+ <%= link_to 'All my expenses', expenses_path, class:""%> 
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div>
+
+
+  <div class="container m-object">
+    <div class="m-object-icon">
+      <i class="fas fa-object-group fa-2x text-white border rounded-circle border-white pd"></i>
+    </div>
+    <div class="m-object-link">
+      <p class="text-white text-left ml-3">
+ <%= link_to 'All Groups',  class:"text-white"%> 
+
+      </p>
+      <hr class="line bg-white">
+    </div>
+  </div> 
+<%
+=end%>
+
+
+
+  <%
+=begin%>
+ <%= link_to 'Log out', logout_path, method: :delete,class:"btn btn-danger form-control mb-3"%> 
+<%
+=end%>
+
+<div class="d-flex justify-content-center mt-5 mb-5">
+<a href="/expenses" class="cta ">
+  <span>My Expenses</span>
+  <svg width="13px" height="15px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</a>
+</div>
+
+<div class="d-flex justify-content-center mt-5 mb-5">
+<a href="/expenses" class="cta ">
+  <span>My Groups</span>
+  <svg width="13px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</a>
+</div>
+
+
+<% if Current.employee %>
+   <%if Current.employee.is_admin%>
+<div class="d-flex justify-content-center mt-5 mb-5">
+<a href="/admin" class="cta ">
+  <span>All Employees Details</span>
+  <svg width="13px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</a>
+</div>
+ <%end%>
+<%end%>

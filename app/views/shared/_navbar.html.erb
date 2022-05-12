@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+     <%= image_tag "expense_save.png", height: 80 %>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav p-4">
+        <li class="nav-item ">
+          <%= link_to "Home", root_path,class: "fs-3 nav-link pl-5"%>
+        </li>
+        <li class="nav-item">
+           <%= link_to "About",about_path,class: "fs-3 nav-link mr-5"%>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-lg-0">
+        <% if Current.employee %>
+        <li class ="nav-item">
+          <h4 class="fs-3 nav-link pl-5 mt-4 mr-4" ><%=Current.employee.name%></h4>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger nav-link text-white m-4 p-3 "%>
+        </li>
+        <% elsif current_page?(:controller => 'admin', :action => 'index') %>
+          <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-danger nav-link text-white m-4 p-3 "%>
+        </li>
+        <%else%>
+        <li class="nav-item"> 
+          <%= link_to "Signup", sign_up_path,class: "fs-3 nav-link pl-5 "%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", sign_in_path,class: "fs-3 nav-link pl-5"%>
+        </li>
+         <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

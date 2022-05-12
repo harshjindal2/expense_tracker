@@ -1,0 +1,40 @@
+<h1 class="text-center mt-5">Sign up</h1>
+
+<%= form_with model: @employee, url: sign_up_path, local: true, data: { turbo: false }  do |form| %>
+  <div class="mb-3">
+
+   <% if @employee.errors.any? %>
+     <div class ="alert alert-danger"> 
+       <%= @employee.errors.full_messages.each do |message|%>
+       <div><%=message%></div> 
+       <%end%>   
+     </div>
+   <%end%>
+
+   <div class="mb-4">
+    <%= form.label :name, class: "pb-2 fs-5" %>
+    <%= form.text_field :name ,class: "form-control p-2" %>
+  </div>
+   <div class ="mb-4">
+    <%= form.label :emailid ,class: "pb-2 fs-5"%>
+    <%= form.text_field :email ,class: "form-control p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :password,class: "pb-2 fs-5" %>
+    <%= form.password_field :password ,class: "form-control p-2" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :Confirm_password ,class: "pb-2 fs-5"%>
+    <%= form.password_field :password_confirmation ,class: "p-2 form-control" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.submit "Sign Up" ,class: "btn btn-primary " %>
+  </div>
+
+  
+<% end %>
+
+<div class="mt-4">
+<h5 class="fs-5">If Already have an account? <%= button_to 'Login' ,sign_in_path, class: "btn btn-warning "%></h5>
+</div>
